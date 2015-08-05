@@ -1,2 +1,2 @@
 # scala-patterns
-Some useful patterns for reference
+Some useful patterns in Scala
