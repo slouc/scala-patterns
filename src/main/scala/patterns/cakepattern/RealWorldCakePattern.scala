@@ -1,4 +1,4 @@
-package patterns
+package patterns.cakepattern
 
 trait ServiceFoo {
   val serviceFoo: ServiceFooImpl

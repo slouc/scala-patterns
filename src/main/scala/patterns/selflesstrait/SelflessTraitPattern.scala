@@ -1,4 +1,4 @@
-package patterns
+package patterns.selflesstrait
 
 trait MySelflessService {
   def foo = 42
@@ -14,9 +14,9 @@ trait MySelflessService {
  * }}}
  *
  * {{{
- * import Friendly._
+ * import MySelflessService._
  *
- * object ImportExample extends MySelflessService {
+ * object ImportExample {
  *   foo()
  * }
  * }}}
@@ -31,14 +31,17 @@ class MyClient {
 }
 
 /** 
- *  Alternative implementation of MySelflessService
+ *  Another implementation of MySelflessService
  */
 trait MyOtherService extends MySelflessService { /* some code */ }
 object MyOtherService extends MyOtherService
 
+/** 
+ * Example of usage
+ */
 object SelflessTraitMain extends App {
-
-  def mock[Any]: Unit = ???
+  
+  def mock[Any]: MySelflessService = ???
 
   // easy to use in tests: 
   val mockService = mock[MySelflessService]

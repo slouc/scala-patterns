@@ -1,4 +1,4 @@
-package patterns
+package patterns.stackabletrait
 
 abstract class Foo {
   def put(x: Int): Unit

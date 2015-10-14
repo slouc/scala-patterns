@@ -1,4 +1,4 @@
-package patterns
+package patterns.cakepattern
 
 trait FooAble {
   def foo(): String
