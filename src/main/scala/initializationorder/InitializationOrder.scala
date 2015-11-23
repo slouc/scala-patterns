@@ -18,24 +18,27 @@ class FooAbstractWithoutNum extends FooAbstract2 { override val num = 5 }
 object OrderMain extends App {
 
   // these two initialize num when it's too late (in their constructors)
+  // prints 0 0
   new Foo()
   new FooWithoutNum with FooTrait { val num = 5 }
   
   // these all initialize num before mixing in FooTrait
+  // prints 5 5 5
   new FooNumParam(5)
   new FooWithNum with FooTrait
   new FooExtendsNum with FooTrait
 
   println("\n===")
   
+  // prints 5 0
   new FooAbstractWithNum(5) // same as with regular class
   new FooAbstractWithoutNum()
 
   println("\n===")
 
-  // If vals are declared in a pre-initialization block when creating new
+  // if vals are declared in a pre-initialization block when creating new
   // class instance, they will be instantiated with given values in the trait
-  
+  // prints 5 0
   new { val num = 5 } with FooTrait
   new FooTrait() { val num = 5 } // no pre-init
 
