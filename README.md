@@ -1,2 +1,3 @@
 # scala-patterns
-Some useful patterns in Scala
+
+Examples for some useful patterns in Scala
