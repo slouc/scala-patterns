@@ -21,7 +21,7 @@ class MyService {
 
 object RealCakeMain extends App {
 
-  // service must be provided with impls of serviceFoo and serviceBar
+  // service must be provided with implementations of serviceFoo and serviceBar
   val service = new MyService with ServiceFoo with ServiceBar {
     override val serviceFoo = new ServiceFooImpl() // or any other impl
     override val serviceBar = new ServiceBarImpl() // or any other impl
